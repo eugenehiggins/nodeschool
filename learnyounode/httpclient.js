@@ -1,0 +1,14 @@
+/**
+ * Created by ehigginsiii on 3/4/16.
+ */
+var http = require('http');
+
+var url = process.argv[2];
+
+http.get(url, function(res){
+    res.setEncoding('utf8');
+
+    res.on('data', function(chunk){
+        console.log(chunk);
+    });
+});
